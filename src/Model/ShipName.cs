@@ -6,20 +6,19 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 /// <summary>
-/// The direction the ship can be oriented.
+/// The names of all of the ships in the gam
 /// </summary>
-public enum Direction
+/// <remarks></remarks>
+public enum ShipName
 {
-	/// <summary>
-	/// The ship is oriented left/right
-	/// </summary>
-	LeftRight,
-
-	/// <summary>
-	/// The ship is oriented up/down
-	/// </summary>
-	UpDown
+	None = 0,
+	Tug = 1,
+	Submarine = 2,
+	Destroyer = 3,
+	Battleship = 4,
+	AircraftCarrier = 5
 }
+
 
 //=======================================================
 //Service provided by Telerik (www.telerik.com)

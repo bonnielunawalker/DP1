@@ -6,19 +6,34 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 /// <summary>
-/// The direction the ship can be oriented.
+/// The result of an attack.
 /// </summary>
-public enum Direction
+public enum ResultOfAttack
 {
 	/// <summary>
-	/// The ship is oriented left/right
+	/// The player hit something
 	/// </summary>
-	LeftRight,
+	Hit,
 
 	/// <summary>
-	/// The ship is oriented up/down
+	/// The player missed
 	/// </summary>
-	UpDown
+	Miss,
+
+	/// <summary>
+	/// The player destroyed a ship
+	/// </summary>
+	Destroyed,
+
+	/// <summary>
+	/// That location was already shot.
+	/// </summary>
+	ShotAlready,
+
+	/// <summary>
+	/// The player killed all of the opponents ships
+	/// </summary>
+	GameOver
 }
 
 //=======================================================
@@ -27,3 +42,4 @@ public enum Direction
 //Twitter: @telerik
 //Facebook: facebook.com/telerik
 //=======================================================
+
