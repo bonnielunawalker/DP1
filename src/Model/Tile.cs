@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 /// <summary>
-/// Tile knows its location on the grid, if it is a ship and if it has been 
+/// Tile knows its location on the grid, if it is a ship and if it has been
 /// shot before
 /// </summary>
 public class Tile
@@ -129,10 +129,3 @@ public class Tile
 		}
 	}
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================

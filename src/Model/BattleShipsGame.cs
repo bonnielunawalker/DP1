@@ -8,7 +8,7 @@ using System.Diagnostics;
 /// <summary>
 /// The BattleShipsGame controls a big part of the game. It will add the two players
 /// to the game and make sure that both players ships are all deployed before starting the game.
-/// It also allows players to shoot and swap turns between player. It will also check if players 
+/// It also allows players to shoot and swap turns between player. It will also check if players
 /// are destroyed.
 /// </summary>
 public class BattleShipsGame
@@ -101,10 +101,3 @@ public class BattleShipsGame
 		return newAttack;
 	}
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================

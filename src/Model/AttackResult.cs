@@ -27,18 +27,18 @@
 		}());
 	</script>
 	<script src="./AttackResult_files/jquery.tlrk.litebox.min.js"></script>
-	
+
 	<link href="./AttackResult_files/WebResource.axd" type="text/css" rel="stylesheet"><link rel="stylesheet" href="./AttackResult_files/WebResource(1).axd"><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script><script type="text/javascript"></script></head>
 <body><div id="ctl00_radLoadPan" style="position: absolute; width: 0px; height: 0px; left: 0px; top: 0px; text-align: center; z-index: 90000; display: none; background-color: white;">
-	
+
 			<img id="ctl00_imgLoad" src="./AttackResult_files/loading.gif" alt="Loading..." style="border-width:0px;">
 		<script type="text/javascript" src="./AttackResult_files/WebResource(2).axd"></script><script type="text/javascript">RadAjaxNamespace.AddPanel( { ClientID : 'ctl00_radLoadPan', IsSticky : false, InitialDelayTime: 100, MinDisplayTime: 500, Transparency: 30 } );</script>
 </div><div id="ctl00_radLoadPan" style="position: absolute; width: 0px; height: 0px; left: 0px; top: 0px; text-align: center; z-index: 90000; display: none; background-color: white;">
-	
+
 			<img id="ctl00_imgLoad" src="./AttackResult_files/loading.gif" alt="Loading..." style="border-width:0px;">
 		<script type="text/javascript" src="./AttackResult_files/WebResource(2).axd"></script><script type="text/javascript">RadAjaxNamespace.AddPanel( { ClientID : 'ctl00_radLoadPan', IsSticky : false, InitialDelayTime: 100, MinDisplayTime: 500, Transparency: 30 } );</script>
 </div><div id="ctl00_radLoadPan" style="position: absolute; width: 408px; height: 450px; left: 485px; top: 159px; text-align: center; z-index: 90000; display: none; background-color: white;">
-	
+
 			<img id="ctl00_imgLoad" src="./AttackResult_files/loading.gif" alt="Loading..." style="border-width:0px;">
 		<script type="text/javascript" src="./AttackResult_files/WebResource(2).axd"></script><script type="text/javascript">RadAjaxNamespace.AddPanel( { ClientID : 'ctl00_radLoadPan', IsSticky : false, InitialDelayTime: 100, MinDisplayTime: 500, Transparency: 30 } );</script>
 </div>
@@ -119,7 +119,7 @@ function __doPostBack(eventTarget, eventArgument) {
 				</a>
 			</div>
 			<div id="ctl00_RadToolTip1" class=" " style="display:none;">
-	
+
 				<div class="Text--b0 u-fs14 u-p2">
 					<h4 style="color: #000">How to Use the Code Converter</h4>
 					<ol class="Space--cozy u-ml2">
@@ -152,7 +152,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm'
 				<div id="outer">
 					<div id="clearheadercenter"></div>
 					<div id="container-center">
-						
+
 
 
     <div class="Section Section--grey1 u-pt3">
@@ -307,7 +307,7 @@ public class AttackResult
 
     <div id="highlighted-syntax" class="u-dn">
         <div class="Box Box--readme Box--overlay" style="max-width:800px; max-height:500px; overflow:auto">
-            
+
 
 
             <div style="float:left; margin:5px 0 10px 0;width:20%">
@@ -414,7 +414,7 @@ public class AttackResult
 					</div>
 					<div id="clearfootercenter"></div>
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -434,7 +434,7 @@ public class AttackResult
 		</div>
 
 		<div id="ctl00_radLoadPan" style="display:none;background-color:White;">
-	
+
 			<img id="ctl00_imgLoad" src="./AttackResult_files/loading.gif" alt="Loading..." style="border-width:0px;">
 		<script type="text/javascript" src="./AttackResult_files/WebResource(2).axd"></script><script type="text/javascript">RadAjaxNamespace.AddPanel( { ClientID : 'ctl00_radLoadPan', IsSticky : false, InitialDelayTime: 100, MinDisplayTime: 500, Transparency: 30 } );</script>
 </div>
@@ -442,7 +442,7 @@ public class AttackResult
 	<!-- 1.6.2 -->
 
 </div>
-	
+
 <div>
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
@@ -467,7 +467,7 @@ redirect.getRedirectVariationId=function(){redirect.initializeRedirectVariationI
 window.cookie={get:function(a){return a?decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(a).replace(/[\-\.\+\*]/g,"\\$\x26")+"\\s*\\\x3d\\s*([^;]*).*$)|^.*$"),"$1"))||null:null},set:function(a,c,b,d,f,g){if(!a||/^(?:expires|max\-age|path|domain|secure)$/i.test(a))return!1;var e="";if(b)switch(b.constructor){case Number:e=Infinity===b?"; expires\x3dFri, 31 Dec 9999 23:59:59 GMT":"; max-age\x3d"+b;break;case String:e="; expires\x3d"+b;break;case Date:e="; expires\x3d"+
 b.toUTCString()}document.cookie=encodeURIComponent(a)+"\x3d"+encodeURIComponent(c)+e+(f?"; domain\x3d"+f:"")+(d?"; path\x3d"+d:"")+(g?"; secure":"");return!0},remove:function(a,c,b){if(!this.has(a))return!1;document.cookie=encodeURIComponent(a)+"\x3d; expires\x3dThu, 01 Jan 1970 00:00:00 GMT"+(b?"; domain\x3d"+b:"")+(c?"; path\x3d"+c:"");return!0},has:function(a){return a?(new RegExp("(?:^|;\\s*)"+encodeURIComponent(a).replace(/[\-\.\+\*]/g,"\\$\x26")+"\\s*\\\x3d")).test(document.cookie):!1},keys:function(){for(var a=
 document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g,"").split(/\s*(?:\=[^;]*)?;\s*/),c=a.length,b=0;b<c;b++)a[b]=decodeURIComponent(a[b]);return a}};var dataLayer=dataLayer||[];
-(function(a){if(a){var c={},b;for(b in integrator.getRelevantExperimentIds()){var d=integrator.getRelevantExperimentIds()[b];experimentName="(experiment "+d+") "+a.allExperiments[d].name;variationName="(variation "+a.variationIdsMap[d]+") "+a.variationNamesMap[d];c[experimentName]=variationName}a={Optimizely_exps:JSON.stringify(c)};window.dataLayer.push(a);try{0<integrator.getRelevantExperimentIds().length&&window.dataLayer.push({event:"optimizely"})}catch(f){}}})(window.optimizely);</script><script type="text/javascript" id="">!function(b,c,d,a){b.twq||(a=b.twq=function(){a.exe?a.exe.apply(a,arguments):a.queue.push(arguments)},a.version="1",a.queue=[],t=c.createElement(d),t.async=!0,t.src="//static.ads-twitter.com/uwt.js",s=c.getElementsByTagName(d)[0],s.parentNode.insertBefore(t,s))}(window,document,"script");twq("init","nurcc");twq("track","PageView");</script> 
+(function(a){if(a){var c={},b;for(b in integrator.getRelevantExperimentIds()){var d=integrator.getRelevantExperimentIds()[b];experimentName="(experiment "+d+") "+a.allExperiments[d].name;variationName="(variation "+a.variationIdsMap[d]+") "+a.variationNamesMap[d];c[experimentName]=variationName}a={Optimizely_exps:JSON.stringify(c)};window.dataLayer.push(a);try{0<integrator.getRelevantExperimentIds().length&&window.dataLayer.push({event:"optimizely"})}catch(f){}}})(window.optimizely);</script><script type="text/javascript" id="">!function(b,c,d,a){b.twq||(a=b.twq=function(){a.exe?a.exe.apply(a,arguments):a.queue.push(arguments)},a.version="1",a.queue=[],t=c.createElement(d),t.async=!0,t.src="//static.ads-twitter.com/uwt.js",s=c.getElementsByTagName(d)[0],s.parentNode.insertBefore(t,s))}(window,document,"script");twq("init","nurcc");twq("track","PageView");</script>
 	<script>$(".litebox").litebox();</script>
 
 

@@ -18,11 +18,3 @@ public enum ShipName
 	Battleship = 4,
 	AircraftCarrier = 5
 }
-
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================

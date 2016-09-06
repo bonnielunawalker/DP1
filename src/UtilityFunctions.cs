@@ -25,7 +25,7 @@ static class UtilityFunctions
 
 	public const int SHIP_GAP = 3;
 	/// <summary>
-	/// Changes the colour of a tile depending on whether its hit and if a ship is placed there. 
+	/// Changes the colour of a tile depending on whether its hit and if a ship is placed there.
 	/// Also includes the colour of message popups and ship outlines.
 	/// </summary>
 	private static readonly Color SMALL_SEA = SwinGame.RGBAColor(6, 60, 94, 255);
@@ -163,7 +163,7 @@ static class UtilityFunctions
 						break;
 				}
 					/// <summary>
-					/// If hit or miss fill in the grid tile. 
+					/// If hit or miss fill in the grid tile.
 					/// </summary>
 				if (draw) {
 					SwinGame.FillRectangle(fillColor, colLeft, rowTop, cellWidth, cellHeight);
@@ -200,7 +200,7 @@ static class UtilityFunctions
 				shipHeight = (cellHeight + cellGap) * s.Size - (SHIP_GAP * 2) - cellGap;
 				shipWidth = cellWidth - (SHIP_GAP * 2);
 			}
-			
+
 			///Draw ship onto grid tiles.
 			if (!small) {
 				SwinGame.DrawBitmap(GameImage(shipName), colLeft, rowTop);
@@ -290,7 +290,7 @@ static class UtilityFunctions
 		///Animation and cell position
 		imgObj = GameImage(image);
 		imgObj.SetCellDetails(40, 40, 3, 3, 7);
-		
+
 		AnimationScript animation = default(AnimationScript);
 		animation = SwinGame.LoadAnimationScript("splash.txt");
 		///Creates sprite
@@ -341,10 +341,3 @@ static class UtilityFunctions
 		}
 	}
 }
-
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================
