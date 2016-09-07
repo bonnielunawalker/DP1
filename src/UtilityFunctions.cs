@@ -3,7 +3,8 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
+// using System.Data;
+using SwinGameSDK;
 using System.Diagnostics;
 /// <summary>
 /// This includes a number of utility methods for
@@ -137,10 +138,10 @@ static class UtilityFunctions
 
 				draw = true;
 
-				switch (grid.Item(row, col)) {
-					case TileView.Ship:
-						draw = false;
-						break;
+				switch (grid[row, col]) {
+					// case TileView.Ship:
+					//	draw = false;
+					// 	break;
 					//If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
 					case TileView.Miss:
 						if (small)
@@ -203,7 +204,7 @@ static class UtilityFunctions
 
 			///Draw ship onto grid tiles.
 			if (!small) {
-				SwinGame.DrawBitmap(GameImage(shipName), colLeft, rowTop);
+				SwinGame.DrawBitmap(GameResources.GameImage(shipName);
 			} else {
 				SwinGame.FillRectangle(SHIP_FILL_COLOR, colLeft, rowTop, shipWidth, shipHeight);
 				SwinGame.DrawRectangle(SHIP_OUTLINE_COLOR, colLeft, rowTop, shipWidth, shipHeight);
@@ -228,7 +229,7 @@ static class UtilityFunctions
 	/// </summary>
 	public static void DrawMessage()
 	{
-		SwinGame.DrawText(Message, MESSAGE_COLOR, GameFont("Courier"), FIELD_LEFT, MESSAGE_TOP);
+		SwinGame.DrawText(Message, MESSAGE_COLOR, GameResouces.GameFont("Courier"), FIELD_LEFT, MESSAGE_TOP);
 	}
 
 	/// <summary>
@@ -237,7 +238,7 @@ static class UtilityFunctions
 
 	public static void DrawBackground()
 	{
-		switch (CurrentState) {
+		switch (GameController.CurrentState) {
 			///Loading different menus
 			///Main menu
 			case GameState.ViewingMainMenu:
@@ -247,22 +248,22 @@ static class UtilityFunctions
 			case GameState.AlteringSettings:
 			///High scores menu
 			case GameState.ViewingHighScores:
-				SwinGame.DrawBitmap(GameImage("Menu"), 0, 0);
+				SwinGame.DrawBitmap(GameResources.GameImage("Menu"), 0, 0);
 				break;
 			case GameState.Discovering:
 			///End game screen
 			case GameState.EndingGame:
-				SwinGame.DrawBitmap(GameImage("Discovery"), 0, 0);
+				SwinGame.DrawBitmap(GameResources.GameImage("Discovery"), 0, 0);
 				break;
 			case GameState.Deploying:
-				SwinGame.DrawBitmap(GameImage("Deploy"), 0, 0);
+				SwinGame.DrawBitmap(GameResources.GameImage("Deploy"), 0, 0);
 				break;
 			default:
 				SwinGame.ClearScreen();
 				break;
 		}
 		///Draw framerate in CourierSmall
-		SwinGame.DrawFramerate(675, 585, GameFont("CourierSmall"));
+		SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
 	}
 	/// <summary>
 	/// Inserts annimations, explosion animation and splash animations. Depending on hit or miss.
@@ -310,7 +311,7 @@ static class UtilityFunctions
 		List<Sprite> ended = new List<Sprite>();
 		foreach (Sprite s in _Animations) {
 			SwinGame.UpdateSprite(s);
-			if (s.animationHasEnded) {
+			if (s.AnimationHasEnded) {
 				ended.Add(s);
 			}
 		}
@@ -337,7 +338,7 @@ static class UtilityFunctions
 		int i = 0;
 		for (i = 1; i <= ANIMATION_CELLS * FRAMES_PER_CELL; i++) {
 			UpdateAnimations();
-			DrawScreen();
+			GameController.DrawScreen();
 		}
 	}
 }
