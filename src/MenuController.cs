@@ -315,7 +315,7 @@ static class MenuController
 				//end game
 				break;
 			case GAME_MENU_QUIT_BUTTON:
-				AddNewState(GameState.Quitting);
+				GameController.AddNewState(GameState.Quitting);
 				break;
 		}
 	}

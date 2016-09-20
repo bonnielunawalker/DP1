@@ -203,7 +203,7 @@ public class AIHardPlayer : AIPlayer
 		for (i = 1; i <= ship.Hits - 1; i++) {
 			if (!foundOriginal) {
 				source = current.Source;
-				//Source is nnothing if the ship was originally hit in
+				// Source is nothing if the ship was originally hit in
 				// the middle. This then searched forward, rather than
 				// backward through the list of targets
 				if (source == null) {
