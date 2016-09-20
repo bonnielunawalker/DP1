@@ -360,8 +360,8 @@ public static class GameResources
 	private static void FreeImages()
 	{
 		Bitmap obj = default(Bitmap);
-		foreach (Bitmap obj in _Images.Values) {
-			SwinGame.FreeBitmap(obj);
+		foreach (Bitmap b in _Images.Values) {
+			SwinGame.FreeBitmap(b);
 		}
 	}
 
@@ -372,8 +372,8 @@ public static class GameResources
 	private static void FreeSounds()
 	{
 		SoundEffect obj = default(SoundEffect);
-		foreach (SoundEffect obj in _Sounds.Values) {
-			Audio.FreeSoundEffect(obj);
+		foreach (SoundEffect s in _Sounds.Values) {
+			Audio.FreeSoundEffect(s);
 		}
 	}
 
@@ -384,7 +384,7 @@ public static class GameResources
 	private static void FreeMusic()
 	{
 		Music obj = default(Music);
-		foreach (Music obj in _Music.Values) {
+		foreach (Music m in _Music.Values) {
 			Audio.FreeMusic(obj);
 		}
 	}

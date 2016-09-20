@@ -204,7 +204,7 @@ static class UtilityFunctions
 
 			///Draw ship onto grid tiles.
 			if (!small) {
-				SwinGame.DrawBitmap(GameResources.GameImage(shipName);
+				SwinGame.DrawBitmap(GameResources.GameImage(shipName));
 			} else {
 				SwinGame.FillRectangle(SHIP_FILL_COLOR, colLeft, rowTop, shipWidth, shipHeight);
 				SwinGame.DrawRectangle(SHIP_OUTLINE_COLOR, colLeft, rowTop, shipWidth, shipHeight);
