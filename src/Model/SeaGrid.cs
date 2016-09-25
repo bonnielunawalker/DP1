@@ -1,4 +1,4 @@
-﻿
+
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -84,12 +84,12 @@ public class SeaGrid : ISeaGrid
 	/// </summary>
 	public SeaGrid(Dictionary<ShipName, Ship> ships)
 	{
-		//fill array with empty Tiles
 		_GameTiles = new Tile[Width, Height];
+		//fill array with empty Tiles
 		int i = 0;
 		for (i = 0; i <= Width - 1; i++) {
 			for (int j = 0; j <= Height - 1; j++) {
-				_GameTiles(i, j) = new Tile(i, j, null);
+				_GameTiles[i, j] = new Tile(i, j, null);
 			}
 		}
 
@@ -198,3 +198,10 @@ public class SeaGrid : ISeaGrid
 		}
 	}
 }
+
+//=======================================================
+//Service provided by Telerik (www.telerik.com)
+//Conversion powered by NRefactory.
+//Twitter: @telerik
+//Facebook: facebook.com/telerik
+//=======================================================

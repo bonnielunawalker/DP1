@@ -11,33 +11,18 @@ using System.Diagnostics;
 /// <remarks></remarks>
 public enum ShipName
 {
-	//<summary>
-	//	No ship name with value.
-	//</summary>
 	None = 0,
-	
-	//<summary>
-	//	Ship name is tug
-	//</summary>
 	Tug = 1,
-	
-	//<summary>
-	//	Ship name is submarine
-	//</summary>
 	Submarine = 2,
-	
-	//<summary>
-	//	Ship name is destroyer
-	//</summary>
 	Destroyer = 3,
-	
-	//<summary>
-	//	Ship name is battleship
-	//</summary>
 	Battleship = 4,
-	
-	//<summary>
-	//	Ship name is aircraftcarrier
-	//</summary>
 	AircraftCarrier = 5
 }
+
+
+//=======================================================
+//Service provided by Telerik (www.telerik.com)
+//Conversion powered by NRefactory.
+//Twitter: @telerik
+//Facebook: facebook.com/telerik
+//=======================================================

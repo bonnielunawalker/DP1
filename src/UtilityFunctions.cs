@@ -1,11 +1,10 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// using System.Data;
-using SwinGameSDK;
+//using System.Data;
 using System.Diagnostics;
+using SwinGameSDK;
 /// <summary>
 /// This includes a number of utility methods for
 /// drawing and interacting with the Mouse.
@@ -25,10 +24,6 @@ static class UtilityFunctions
 	public const int CELL_GAP = 2;
 
 	public const int SHIP_GAP = 3;
-	/// <summary>
-	/// Changes the colour of a tile depending on whether its hit and if a ship is placed there.
-	/// Also includes the colour of message popups and ship outlines.
-	/// </summary>
 	private static readonly Color SMALL_SEA = SwinGame.RGBAColor(6, 60, 94, 255);
 	private static readonly Color SMALL_SHIP = Color.Gray;
 	private static readonly Color SMALL_MISS = SwinGame.RGBAColor(1, 147, 220, 255);
@@ -132,16 +127,16 @@ static class UtilityFunctions
 
 			for (int col = 0; col <= 9; col++) {
 				colLeft = left + (cellGap + cellWidth) * col;
-				///Fills grid colour
+
 				Color fillColor = default(Color);
 				bool draw = false;
 
 				draw = true;
 
 				switch (grid[row, col]) {
-					// case TileView.Ship:
+					//case TileView.Ship:
 					//	draw = false;
-					// 	break;
+					//	break;
 					//If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
 					case TileView.Miss:
 						if (small)
@@ -163,9 +158,7 @@ static class UtilityFunctions
 							draw = false;
 						break;
 				}
-					/// <summary>
-					/// If hit or miss fill in the grid tile.
-					/// </summary>
+
 				if (draw) {
 					SwinGame.FillRectangle(fillColor, colLeft, rowTop, cellWidth, cellHeight);
 					if (!small) {
@@ -191,18 +184,16 @@ static class UtilityFunctions
 			colLeft = left + (cellGap + cellWidth) * s.Column + SHIP_GAP;
 
 			if (s.Direction == Direction.LeftRight) {
-				//Draw the ships from left to right
 				shipName = "ShipLR" + s.Size;
 				shipHeight = cellHeight - (SHIP_GAP * 2);
 				shipWidth = (cellWidth + cellGap) * s.Size - (SHIP_GAP * 2) - cellGap;
 			} else {
-				//Draw the ships from up to down
+				//Up down
 				shipName = "ShipUD" + s.Size;
 				shipHeight = (cellHeight + cellGap) * s.Size - (SHIP_GAP * 2) - cellGap;
 				shipWidth = cellWidth - (SHIP_GAP * 2);
 			}
 
-			///Draw ship onto grid tiles.
 			if (!small) {
 				SwinGame.DrawBitmap(GameResources.GameImage(shipName), colLeft, rowTop);
 			} else {
@@ -229,7 +220,7 @@ static class UtilityFunctions
 	/// </summary>
 	public static void DrawMessage()
 	{
-		SwinGame.DrawText(Message, MESSAGE_COLOR, GameResouces.GameFont("Courier"), FIELD_LEFT, MESSAGE_TOP);
+		SwinGame.DrawText(Message, MESSAGE_COLOR, GameResources.GameFont("Courier"), FIELD_LEFT, MESSAGE_TOP);
 	}
 
 	/// <summary>
@@ -239,19 +230,13 @@ static class UtilityFunctions
 	public static void DrawBackground()
 	{
 		switch (GameController.CurrentState) {
-			///Loading different menus
-			///Main menu
 			case GameState.ViewingMainMenu:
-			///Game menu
 			case GameState.ViewingGameMenu:
-			///Settings menu
 			case GameState.AlteringSettings:
-			///High scores menu
 			case GameState.ViewingHighScores:
 				SwinGame.DrawBitmap(GameResources.GameImage("Menu"), 0, 0);
 				break;
 			case GameState.Discovering:
-			///End game screen
 			case GameState.EndingGame:
 				SwinGame.DrawBitmap(GameResources.GameImage("Discovery"), 0, 0);
 				break;
@@ -262,52 +247,43 @@ static class UtilityFunctions
 				SwinGame.ClearScreen();
 				break;
 		}
-		///Draw framerate in CourierSmall
+
 		SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
 	}
-	/// <summary>
-	/// Inserts annimations, explosion animation and splash animations. Depending on hit or miss.
-	/// </summary>
+
 	public static void AddExplosion(int row, int col)
 	{
-		///Explosion animation
 		AddAnimation(row, col, "Splash");
 	}
 
 	public static void AddSplash(int row, int col)
 	{
-		///Splash animation
 		AddAnimation(row, col, "Splash");
 	}
 
-	/// <summary>
-	/// Loads sprite animations, positions them on grid.
-	/// </summary>
+
 	private static List<Sprite> _Animations = new List<Sprite>();
 	private static void AddAnimation(int row, int col, string image)
 	{
 		Sprite s = default(Sprite);
 		Bitmap imgObj = default(Bitmap);
-		///Animation and cell position
+
 		imgObj = GameResources.GameImage(image);
 		imgObj.SetCellDetails(40, 40, 3, 3, 7);
 
 		AnimationScript animation = default(AnimationScript);
 		animation = SwinGame.LoadAnimationScript("splash.txt");
-		///Creates sprite
+
 		s = SwinGame.CreateSprite(imgObj, animation);
 		s.X = FIELD_LEFT + col * (CELL_WIDTH + CELL_GAP);
 		s.Y = FIELD_TOP + row * (CELL_HEIGHT + CELL_GAP);
-		///Initial start animation
+
 		s.StartAnimation("splash");
 		_Animations.Add(s);
 	}
-	/// <summary>
-	/// Changes sprite after each animation is used.
-	/// </summary>
+
 	public static void UpdateAnimations()
 	{
-		///Updates sprite
 		List<Sprite> ended = new List<Sprite>();
 		foreach (Sprite s in _Animations) {
 			SwinGame.UpdateSprite(s);
@@ -315,24 +291,20 @@ static class UtilityFunctions
 				ended.Add(s);
 			}
 		}
-		///Removes animation
+
 		foreach (Sprite s in ended) {
 			_Animations.Remove(s);
 			SwinGame.FreeSprite(s);
 		}
 	}
-	/// <summary>
-	/// Draws specific animation
-	/// </summary>
+
 	public static void DrawAnimations()
 	{
 		foreach (Sprite s in _Animations) {
 			SwinGame.DrawSprite(s);
 		}
 	}
-	/// <summary>
-	/// Draws a sequence of animations in specified cells.
-	/// </summary>
+
 	public static void DrawAnimationSequence()
 	{
 		int i = 0;

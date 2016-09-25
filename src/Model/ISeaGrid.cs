@@ -1,3 +1,4 @@
+
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -35,6 +36,5 @@ public interface ISeaGrid
 	/// <param name="row">the row of the tile</param>
 	/// <param name="col">the column of the tile</param>
 	/// <returns>the result of the attack</returns>
-
 	AttackResult HitTile(int row, int col);
 }

@@ -3,7 +3,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// using System.Data;
+//using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
 
@@ -14,6 +14,7 @@ using SwinGameSDK;
 /// </summary>
 public static class GameController
 {
+
 	private static BattleShipsGame _theGame;
 	private static Player _human;
 
@@ -49,10 +50,7 @@ public static class GameController
 	public static Player ComputerPlayer {
 		get { return _ai; }
 	}
-	//<summary>
-	//	Controls the game like quitting or viewing main menu
-	//</summary>
-	//<remarks>This is a constructor so returns nothing</remarks>
+
 	static GameController()
 	{
 		//bottom state will be quitting. If player exits main menu then the game is over
@@ -120,13 +118,7 @@ public static class GameController
 		DrawScreen();
 		SwinGame.RefreshScreen();
 	}
-//</summary>
-//Demonstrates the playing and if hitting sequence
-//</summary>
-//<param name="row">The row index on the game board</param>
-//<param name="col">The col index on the game board</param>
-//<param name="showAnimation">a bool value based on which changes to game board are made.</param>
-//<remarks>Draws the animation sequence based on some factor if the player hits.</remarks>
+
 	private static void PlayHitSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {
@@ -137,13 +129,7 @@ public static class GameController
 
 		UtilityFunctions.DrawAnimationSequence();
 	}
-//</summary>
-//Demonstrates the playing and if missing sequence
-//</summary>
-//<param name="row">The row index on the game board</param>
-//<param name="col">The col index on the game board</param>
-//<param name="showAnimation">a bool value based on which changes to game board are made.</param>
-//<remarks>Draws the animation sequence based on some factor if the player misses.</remarks>
+
 	private static void PlayMissSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {
@@ -177,22 +163,22 @@ public static class GameController
 		switch (result.Value) {
 			case ResultOfAttack.Destroyed:
 				PlayHitSequence(result.Row, result.Column, isHuman);
-			Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
+				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
 
 				break;
 			case ResultOfAttack.GameOver:
 				PlayHitSequence(result.Row, result.Column, isHuman);
-			Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
+				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
 
-			while (Audio.SoundEffectPlaying(GameResources.GameSound("Sink"))) {
+				while (Audio.SoundEffectPlaying(GameResources.GameSound("Sink"))) {
 					SwinGame.Delay(10);
 					SwinGame.RefreshScreen();
 				}
 
 				if (HumanPlayer.IsDestroyed) {
-				Audio.PlaySoundEffect(GameResources.GameSound("Lose"));
+					Audio.PlaySoundEffect(GameResources.GameSound("Lose"));
 				} else {
-				Audio.PlaySoundEffect(GameResources.GameSound("Winner"));
+					Audio.PlaySoundEffect(GameResources.GameSound("Winner"));
 				}
 
 				break;
@@ -203,7 +189,7 @@ public static class GameController
 				PlayMissSequence(result.Row, result.Column, isHuman);
 				break;
 			case ResultOfAttack.ShotAlready:
-			Audio.PlaySoundEffect(GameResources.GameSound("Error"));
+				Audio.PlaySoundEffect(GameResources.GameSound("Error"));
 				break;
 		}
 	}

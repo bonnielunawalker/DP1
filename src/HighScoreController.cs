@@ -3,7 +3,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-// using System.Data;
+//using System.Data;
 using System.Diagnostics;
 using System.IO;
 using SwinGameSDK;
@@ -54,7 +54,7 @@ static class HighScoreController
 	/// The format is
 	/// # of scores
 	/// NNNSSS
-	///
+	/// 
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
 	private static void LoadScores()
@@ -93,7 +93,7 @@ static class HighScoreController
 	/// The format is
 	/// # of scores
 	/// NNNSSS
-	///
+	/// 
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
 	private static void SaveScores()
