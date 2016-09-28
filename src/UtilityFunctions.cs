@@ -24,6 +24,10 @@ static class UtilityFunctions
 	public const int CELL_GAP = 2;
 
 	public const int SHIP_GAP = 3;
+	/// <summary>
+/// Changes the colour of a tile depending on whether its hit and if a ship is placed there.
+/// Also includes the colour of message popups and ship outlines.
+/// </summary>
 	private static readonly Color SMALL_SEA = SwinGame.RGBAColor(6, 60, 94, 255);
 	private static readonly Color SMALL_SHIP = Color.Gray;
 	private static readonly Color SMALL_MISS = SwinGame.RGBAColor(1, 147, 220, 255);
@@ -251,6 +255,9 @@ static class UtilityFunctions
 		SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
 	}
 
+	/// <summary>
+	/// Inserts annimations, explosion animation and splash animations. Depending on hit or miss.
+	/// </summary>
 	public static void AddExplosion(int row, int col)
 	{
 		AddAnimation(row, col, "Splash");
@@ -261,7 +268,9 @@ static class UtilityFunctions
 		AddAnimation(row, col, "Splash");
 	}
 
-
+	/// <summary>
+	/// Loads sprite animations, positions them on grid.
+	/// </summary>
 	private static List<Sprite> _Animations = new List<Sprite>();
 	private static void AddAnimation(int row, int col, string image)
 	{
@@ -282,6 +291,9 @@ static class UtilityFunctions
 		_Animations.Add(s);
 	}
 
+	/// <summary>
+	/// Changes sprite after each animation is used.
+	/// </summary>
 	public static void UpdateAnimations()
 	{
 		List<Sprite> ended = new List<Sprite>();
@@ -298,6 +310,9 @@ static class UtilityFunctions
 		}
 	}
 
+	/// <summary>
+	/// Draws specific animation
+	/// </summary>
 	public static void DrawAnimations()
 	{
 		foreach (Sprite s in _Animations) {
@@ -305,6 +320,9 @@ static class UtilityFunctions
 		}
 	}
 
+	/// <summary>
+	/// Draws a sequence of animations in specified cells.
+	/// </summary>
 	public static void DrawAnimationSequence()
 	{
 		int i = 0;
