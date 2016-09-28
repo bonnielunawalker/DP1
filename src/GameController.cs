@@ -3,7 +3,6 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
 
@@ -51,6 +50,10 @@ public static class GameController
 		get { return _ai; }
 	}
 
+	///<summary>
+	///	Controls the game like quitting or viewing main menu
+	///</summary>
+	///<remarks>This is a constructor so returns nothing</remarks>
 	static GameController()
 	{
 		//bottom state will be quitting. If player exits main menu then the game is over
@@ -122,6 +125,13 @@ public static class GameController
 		SwinGame.RefreshScreen();
 	}
 
+	///</summary>
+	///Demonstrates the playing and if hitting sequence
+	///</summary>
+	///<param name="row">The row index on the game board</param>
+	///<param name="col">The col index on the game board</param>
+	///<param name="showAnimation">a bool value based on which changes to game board are made.</param>
+	///<remarks>Draws the animation sequence based on some factor if the player hits.</remarks>
 	private static void PlayHitSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {
@@ -133,6 +143,13 @@ public static class GameController
 		UtilityFunctions.DrawAnimationSequence();
 	}
 
+	///</summary>
+	///Demonstrates the playing and if missing sequence
+	///</summary>
+	///<param name="row">The row index on the game board</param>
+	///<param name="col">The col index on the game board</param>
+	///<param name="showAnimation">a bool value based on which changes to game board are made.</param>
+	///<remarks>Draws the animation sequence based on some factor if the player misses.</remarks>
 	private static void PlayMissSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {

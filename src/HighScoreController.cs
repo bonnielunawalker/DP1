@@ -3,7 +3,6 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Data;
 using System.Diagnostics;
 using System.IO;
 using SwinGameSDK;
@@ -54,14 +53,15 @@ static class HighScoreController
 	/// The format is
 	/// # of scores
 	/// NNNSSS
-	/// 
+	///
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
 	private static void LoadScores()
 	{
+		/// Load highscores
 		string filename = null;
 		filename = SwinGame.PathToResource("highscores.txt");
-
+		/// Read scores from file
 		StreamReader input = default(StreamReader);
 		input = new StreamReader(filename);
 
@@ -72,7 +72,7 @@ static class HighScoreController
 		_Scores.Clear();
 
 		int i = 0;
-
+		/// inserts the 10 default scores and names
 		for (i = 1; i <= numScores; i++) {
 			Score s = default(Score);
 			string line = null;
@@ -93,7 +93,7 @@ static class HighScoreController
 	/// The format is
 	/// # of scores
 	/// NNNSSS
-	/// 
+	///
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
 	private static void SaveScores()
