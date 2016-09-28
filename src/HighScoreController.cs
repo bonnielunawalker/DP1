@@ -59,10 +59,9 @@ static class HighScoreController
 	/// </remarks>
 	private static void LoadScores()
 	{
-		/// Load highscores
 		string filename = null;
 		filename = SwinGame.PathToResource("highscores.txt");
-		/// Read scores from file
+
 		StreamReader input = default(StreamReader);
 		input = new StreamReader(filename);
 
@@ -73,7 +72,7 @@ static class HighScoreController
 		_Scores.Clear();
 
 		int i = 0;
-		/// inserts the 10 default scores and names
+
 		for (i = 1; i <= numScores; i++) {
 			Score s = default(Score);
 			string line = null;
@@ -99,15 +98,14 @@ static class HighScoreController
 	/// </remarks>
 	private static void SaveScores()
 	{
-		/// Access HighScores text file
 		string filename = null;
 		filename = SwinGame.PathToResource("highscores.txt");
-		/// Output to the file
+
 		StreamWriter output = default(StreamWriter);
 		output = new StreamWriter(filename);
 
 		output.WriteLine(_Scores.Count);
-		/// Add each score to HighScores
+
 		foreach (Score s in _Scores) {
 			output.WriteLine(s.Name + s.Value);
 		}
@@ -126,7 +124,7 @@ static class HighScoreController
 
 		if (_Scores.Count == 0)
 			LoadScores();
-		/// High scores heading
+
 		SwinGame.DrawText("   High Scores   ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
 
 		//For all of the scores
@@ -174,18 +172,18 @@ static class HighScoreController
 		if (value > _Scores[_Scores.Count - 1].Value) {
 			Score s = new Score();
 			s.Value = value;
-			/// View highscores
+
 			GameController.AddNewState(GameState.ViewingHighScores);
-			/// Write out high scores 'Name' and entry
+
 			int x = 0;
 			x = SCORES_LEFT + SwinGame.TextWidth(GameResources.GameFont("Courier"), "Name: ");
-			/// Load entry
+
 			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameResources.GameFont("Courier"), x, ENTRY_TOP);
 
 			//Read the text from the user
 			while (SwinGame.ReadingText()) {
 				SwinGame.ProcessEvents();
-				/// Write out highscores
+
 				UtilityFunctions.DrawBackground();
 				DrawHighScores();
 				SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
@@ -193,11 +191,11 @@ static class HighScoreController
 			}
 
 			s.Name = SwinGame.TextReadAsASCII();
-			/// convert data into three letter names
+
 			if (s.Name.Length < 3) {
 				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
 			}
-			///remove and add scores
+
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);
 			_Scores.Sort();
