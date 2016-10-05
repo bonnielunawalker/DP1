@@ -39,6 +39,10 @@ public class Player : IEnumerable<Ship>
 	public ISeaGrid Enemy {
 		set { _enemyGrid = value; }
 	}
+	/// <summary>
+	/// Sets the grid of the player and deployes ship on the players grid
+	/// </summary>
+	/// <value>The players's sea grid</value>
 
 	public Player(BattleShipsGame controller)
 	{
@@ -76,7 +80,7 @@ public class Player : IEnumerable<Ship>
 	public bool ReadyToDeploy {
 		get { return _playerGrid.AllDeployed; }
 	}
-
+	
 	public bool IsDestroyed {
 //Check if all ships are destroyed... -1 for the none ship
 		get { return _playerGrid.ShipsKilled == Enum.GetValues(typeof(ShipName)).Length - 1; }
@@ -119,7 +123,11 @@ public class Player : IEnumerable<Ship>
 	public int Missed {
 		get { return _misses; }
 	}
-
+///<summary>
+///Calculates the score for that instance if the player hits something on the enemy grid.
+///</summary>
+///<value>Score calculated
+///<return>Players score uptil now</return>
 	public int Score {
 		get {
 			if (IsDestroyed) {
@@ -198,6 +206,9 @@ public class Player : IEnumerable<Ship>
 		return result;
 	}
 
+///<summary>Deploys ship on the player grid randomnly
+///</summary>
+
 	public virtual void RandomizeDeployment()
 	{
 		bool placementSuccessful = false;
@@ -236,9 +247,3 @@ public class Player : IEnumerable<Ship>
 	}
 }
 
-//=======================================================
-//Service provided by Telerik (www.telerik.com)
-//Conversion powered by NRefactory.
-//Twitter: @telerik
-//Facebook: facebook.com/telerik
-//=======================================================
