@@ -49,14 +49,16 @@ namespace BattleShips.Tests
         public void AddPlayerLimitTest()
         {
             // arrange
-            Player player1;
-            Player player2;
-            Player player3;
+            Player player1 = new Player(game);
+            Player player2 = new Player(game);
+            Player player3 = new Player(game);
 
             // act
-            player1 = new Player(game);
-            player2 = new Player(game);
-            player3 = new Player(game);
+            game.AddDeployedPlayer(player1);
+            game.AddDeployedPlayer(player2);
+            game.AddDeployedPlayer(player3);
+
+            // assert is specified in [ExpectedException] option
         }
     }
 }
