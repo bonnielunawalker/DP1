@@ -82,7 +82,7 @@ public abstract class AIPlayer : Player
 		/// <param name="game">Game.</param>
 		public override bool Equals(object obj)
 		{
-			return !ReferenceEquals(@this, null) && !ReferenceEquals(other, null) && ReferenceEquals(@this.Row, other.Row) && ReferenceEquals(@this.Column, other.Column);
+			return true;
 		}
 		/// <summary>
 		/// Location overriding the object.gethashcode function
