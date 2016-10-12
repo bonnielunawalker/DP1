@@ -76,11 +76,26 @@ public abstract class AIPlayer : Player
 			return ReferenceEquals(@this, null) || ReferenceEquals(other, null) || !ReferenceEquals(@this.Row, other.Row) || !ReferenceEquals(@this.Column, other.Column);
 			//return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
 		}
+		/// <summary>
+		/// Location overriding the object.equals function
+		/// </summary>
+		/// <param name="game">Game.</param>
+		public override bool Equals(object obj)
+		{
+			return !ReferenceEquals(@this, null) && !ReferenceEquals(other, null) && ReferenceEquals(@this.Row, other.Row) && ReferenceEquals(@this.Column, other.Column);
+		}
+		/// <summary>
+		/// Location overriding the object.gethashcode function
+		/// </summary>
+		/// <param name="game">Game.</param>
+		public override int GetHashCode()
+		{
+			return _Row ^ _Column;
+		}
 	}
-
-
 	public AIPlayer(BattleShipsGame game) : base(game)
 	{
+		
 	}
 
 	/// <summary>
