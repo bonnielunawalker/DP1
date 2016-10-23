@@ -1,0 +1,25 @@
+using NUnit.Framework;
+using System;
+namespace TestBattleShips
+{
+	[TestFixture ()]
+	public class NEasyPlayerTest
+	{
+		private BattleShipsGame game;
+		private AIEasyPlayer ai; 
+		[Test ()]
+		public void GetAITest()
+		{
+			// arrange
+			ai = new AIEasyPlayer(game);
+
+			// act
+			var expected = ai.Game;
+			var actual = game;
+
+			// assert
+			Assert.AreEqual(expected, actual);
+		}
+	}
+}
+
